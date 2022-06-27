@@ -123,7 +123,7 @@ html.dark {
   --hty-secondary-text-color: #555;
   --post-block-bg-color: #fff;
   --smc-link-color: #ff00e6;
-  --yun-bg-image: url("https://cdn.yunyoujun.cn/img/bg/stars-timing-0-blur-30px.jpg");
+  --yun-bg-image: url("/images/bg.jpg");
   --banner-line-color: #000;
   --banner-char-color: #000;
 }
@@ -134,7 +134,7 @@ html.dark {
   --hty-secondary-text-color: #eee;
   --post-block-bg-color: #1b1f2e;
   --smc-link-color: #ff4dee;
-  --yun-bg-image: url("https://cdn.yunyoujun.cn/img/bg/galaxy.jpg");
+  --yun-bg-image: url("/images/darkbg.jpg");
   --banner-line-color: #fff;
   --banner-char-color: #fff;
   --banner-char-bg-color: rgba(0,0,0,0.5);
@@ -293,14 +293,15 @@ body::before {
   background-repeat: no-repeat;
   animation-name: bgFadeIn;
   animation-duration: 2s;
-  opacity: 1;
+  opacity: 0.6;
+  filter: blur(1px);
 }
 @-moz-keyframes bgFadeIn {
   from {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.6;
   }
 }
 @-webkit-keyframes bgFadeIn {
@@ -308,7 +309,7 @@ body::before {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.6;
   }
 }
 @-o-keyframes bgFadeIn {
@@ -316,7 +317,7 @@ body::before {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.6;
   }
 }
 @keyframes bgFadeIn {
@@ -324,8 +325,23 @@ body::before {
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.6;
   }
+}
+body {
+  cursor: url("https://cdn.yunyoujun.cn/css/md-cursors/pointer.cur"), auto;
+}
+a {
+  cursor: url("https://cdn.yunyoujun.cn/css/md-cursors/link.cur"), auto;
+}
+a:hover {
+  cursor: url("https://cdn.yunyoujun.cn/css/md-cursors/link.cur"), auto;
+}
+.hty-icon-button {
+  cursor: url("https://cdn.yunyoujun.cn/css/md-cursors/link.cur"), pointer;
+}
+input {
+  cursor: url("https://cdn.yunyoujun.cn/css/md-cursors/text.cur"), auto;
 }
 :root {
   --banner-char-bg-color: rgba(255,255,255,0.5);
@@ -880,7 +896,7 @@ body::before {
 }
 .wordcloud #wordcloud-canvas,
 .wordcloud #wordcloud-sidebar-canvas {
-  cursor: url("$cursor-pointer"), pointer;
+  cursor: url("https://cdn.yunyoujun.cn/css/md-cursors/link.cur"), pointer;
 }
 .wordcloud #wordbox {
   pointer-events: none;
@@ -1799,7 +1815,7 @@ body::before {
   max-height: 10000px;
 }
 :root {
-  --sidebar-bg-image: url("https://cdn.yunyoujun.cn/img/bg/alpha-stars-timing-1.webp");
+  --sidebar-bg-image: url("/images/sidebar.png");
 }
 #menu-btn {
   display: none;
@@ -1852,7 +1868,7 @@ body::before {
   background-color: var(--sidebar-bg-color, #fff);
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: bottom 1rem center;
+  background-position: bottom 0rem center;
   text-align: center;
   z-index: 10;
   transition-property: all;
@@ -1952,6 +1968,17 @@ body::before {
   margin-top: 0;
   margin-bottom: 1rem;
   line-height: 1.5;
+}
+.site-author-status {
+  position: absolute;
+  height: 1.8rem;
+  width: 1.8rem;
+  bottom: 0;
+  right: 0;
+  line-height: 1.8rem;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  background-color: #fff;
 }
 .site-name {
   color: var(--hty-text-color);
